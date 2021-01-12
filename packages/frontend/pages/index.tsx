@@ -2,7 +2,7 @@ import { IS_DEV } from "@project/shared";
 import { GetStaticProps } from "next";
 import { apiBase } from "../lib/consts";
 
-type HomeProps = { time: number | bigint };
+type HomeProps = { users: number };
 
 export default function Home(props: HomeProps) {
   const message = IS_DEV
@@ -19,17 +19,21 @@ export default function Home(props: HomeProps) {
         </code>
       </h2>
       <br />
-      <h3>Next.js Static Prop from backend: {props.time}</h3>
+      <h3>
+        Next.js Static Prop from backend (count of users in database):{" "}
+        {props.users}
+      </h3>
     </div>
   );
 }
 
 export const getStaticProps: GetStaticProps<HomeProps> = async () => {
-  const { time } = await fetch(apiBase)
+  const users = await fetch(apiBase)
     .then((res) => res.json())
-    .catch(() => ({ time: Date.now() }));
+    .catch(() => 0);
 
   return {
-    props: { time },
+    props: { users },
+    revalidate: 120,
   };
 };
