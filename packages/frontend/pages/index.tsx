@@ -25,7 +25,9 @@ export default function Home(props: HomeProps) {
 }
 
 export const getStaticProps: GetStaticProps<HomeProps> = async () => {
-  const { time } = await fetch(apiBase).then((res) => res.json());
+  const { time } = await fetch(apiBase)
+    .then((res) => res.json())
+    .catch(() => ({ time: Date.now() }));
 
   return {
     props: { time },

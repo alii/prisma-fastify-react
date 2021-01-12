@@ -29,6 +29,7 @@
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate dev --preview-feature",
     "watch": "lerna run watch --parallel",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "build": "lerna run build --include-dependencies"
   }
 }
