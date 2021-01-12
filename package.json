@@ -30,6 +30,6 @@
     "prisma:migrate": "prisma migrate dev --preview-feature",
     "watch": "lerna run watch --parallel",
     "lint": "eslint .",
-    "build": "lerna run build --include-dependencies"
+    "build": "yarn workspace @project/shared build && lerna run --ignore @project/shared build --parallel"
   }
 }
