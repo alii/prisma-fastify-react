@@ -1,35 +1,40 @@
 {
-  "name": "project",
-  "version": "1.0.0",
-  "private": true,
-  "main": "./packages/backend/dist/index.js",
-  "repository": "https://github.com/alii/prisma-express-react.git",
-  "author": "Alistair Smith <alistairsmith01@gmail.com>",
-  "license": "MIT",
-  "devDependencies": {
-    "prisma": "^2.23.0",
-    "@typescript-eslint/eslint-plugin": "^4.24.0",
-    "@typescript-eslint/parser": "^4.24.0",
-    "eslint": "^7.26.0",
-    "eslint-plugin-react": "^7.23.2",
-    "lerna": "^4.0.0",
-    "prettier": "^2.3.0",
-    "rimraf": "^3.0.2",
-    "tslib": "^2.2.0"
-  },
-  "workspaces": {
-    "packages": [
-      "packages/*"
-    ]
-  },
-  "dependencies": {
-    "@prisma/client": "^2.23.0"
-  },
-  "scripts": {
-    "prisma:generate": "prisma generate",
-    "prisma:migrate": "prisma migrate dev --preview-feature",
-    "watch": "lerna run watch --parallel",
-    "lint": "eslint .",
-    "build": "yarn workspace @project/shared build && lerna run --ignore @project/shared build --parallel"
-  }
+	"name": "project",
+	"version": "1.0.0",
+	"private": true,
+	"main": "./packages/backend/dist/index.js",
+	"repository": "https://github.com/alii/prisma-express-react.git",
+	"author": "Alistair Smith <alistairsmith01@gmail.com>",
+	"license": "MIT",
+	"devDependencies": {
+		"@typescript-eslint/eslint-plugin": "^4.24.0",
+		"@typescript-eslint/parser": "^4.24.0",
+		"eslint": "^7.26.0",
+		"eslint-config-xo": "^0.36.0",
+		"eslint-config-xo-react": "^0.25.0",
+		"eslint-config-xo-typescript": "^0.41.1",
+		"eslint-plugin-react": "^7.23.2",
+		"eslint-plugin-react-hooks": "^4.2.0",
+		"lerna": "^4.0.0",
+		"prettier": "^2.3.0",
+		"prisma": "^2.23.0",
+		"rimraf": "^3.0.2",
+		"tslib": "^2.2.0",
+		"typescript": "^4.2.4"
+	},
+	"workspaces": {
+		"packages": [
+			"packages/*"
+		]
+	},
+	"dependencies": {
+		"@prisma/client": "^2.23.0"
+	},
+	"scripts": {
+		"prisma:generate": "prisma generate",
+		"prisma:migrate": "prisma migrate dev --preview-feature",
+		"watch": "lerna run watch --parallel",
+		"lint": "eslint ./**/*.{ts,tsx} --fix",
+		"build": "yarn workspace @project/shared build && lerna run --ignore @project/shared build --parallel"
+	}
 }
