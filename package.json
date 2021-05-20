@@ -7,15 +7,15 @@
   "author": "Alistair Smith <alistairsmith01@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "prisma": "^2.20.1",
-    "@typescript-eslint/eslint-plugin": "^4.13.0",
-    "@typescript-eslint/parser": "^4.13.0",
-    "eslint": "^7.17.0",
-    "eslint-plugin-react": "^7.22.0",
-    "lerna": "^3.22.1",
-    "prettier": "^2.2.1",
+    "prisma": "^2.23.0",
+    "@typescript-eslint/eslint-plugin": "^4.24.0",
+    "@typescript-eslint/parser": "^4.24.0",
+    "eslint": "^7.26.0",
+    "eslint-plugin-react": "^7.23.2",
+    "lerna": "^4.0.0",
+    "prettier": "^2.3.0",
     "rimraf": "^3.0.2",
-    "tslib": "^2.1.0"
+    "tslib": "^2.2.0"
   },
   "workspaces": {
     "packages": [
@@ -23,7 +23,7 @@
     ]
   },
   "dependencies": {
-    "@prisma/client": "^2.20.1"
+    "@prisma/client": "^2.23.0"
   },
   "scripts": {
     "prisma:generate": "prisma generate",
